@@ -8,15 +8,15 @@ Additional triggers can be added via [LayoutQueue](https://github.com/davejtoews
 
 Install via npm or yarn.
 
-    npm install stick-to-sides
+    npm install align-to-sides
 
 OR
 
-	yarn add stick-to-sides
+	yarn add align-to-sides
 
 Then require this module within your javascript:
 
-    var AlignToSides = require('../AlignToSides.js');
+    var AlignToSides = require('align-to-sides');
 
 ## Basic Use
 

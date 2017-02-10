@@ -2,7 +2,7 @@
 
 var LayoutQueue = require('layout-queue');
 
-var StickToSides = (function () {
+var AlignToSides = (function () {
 
 	function align(selector, tolerance) {
         document.querySelectorAll(selector).forEach(function(parent) {
@@ -52,4 +52,4 @@ var StickToSides = (function () {
 
 })();
 
-module.exports = StickToSides;
+module.exports = AlignToSides;

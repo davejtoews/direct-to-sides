@@ -1,8 +1,8 @@
 require('jsdom-global')();
 var assert = require('chai').assert;
-var StickToSides = require('../StickToSides.js');
+var AlignToSides = require('../AlignToSides.js');
 
-describe('StickToSides', function() {
+describe('AlignToSides', function() {
 	document.body.innerHTML = '<ul><li>one</li><li>two</li><li>three</li></ul>';
 	
 	var parent = document.querySelector('ul');
@@ -23,17 +23,17 @@ describe('StickToSides', function() {
 		setBoundingClientRect(children[1], 45, 55);
 		setBoundingClientRect(children[2], 80, 90);
 
-		StickToSides.set('ul');
+		AlignToSides.set('ul');
 
 		assert.equal(document.body.innerHTML, '<ul><li style="text-align: left;">one</li><li style="text-align: left;">two</li><li style="text-align: right;">three</li></ul>');		
 	});
 	it('should unset alignment', function() {
-		StickToSides.unset('ul');
+		AlignToSides.unset('ul');
 		assert.equal(document.body.innerHTML, '<ul><li style="text-align: inherit;">one</li><li style="text-align: inherit;">two</li><li style="text-align: inherit;">three</li></ul>');		
 	});
 	it('should set alignment with respect to tolerance', function() {
 
-		StickToSides.set('ul', 20);
+		AlignToSides.set('ul', 20);
 		assert.equal(document.body.innerHTML, '<ul><li style="text-align: left;">one</li><li style="text-align: center;">two</li><li style="text-align: right;">three</li></ul>');		
 	});
 	it('should set alignment on resize', function() {
@@ -42,7 +42,7 @@ describe('StickToSides', function() {
 		setBoundingClientRect(children[1], 180, 190);
 		setBoundingClientRect(children[2], 110, 120);
 
-		StickToSides.init('ul', 30);
+		AlignToSides.init('ul', 30);
 		window.dispatchEvent(new Event('resize'));
 
 		assert.equal(document.body.innerHTML, '<ul><li style="text-align: center;">one</li><li style="text-align: right;">two</li><li style="text-align: left;">three</li></ul>');		

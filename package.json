@@ -11,5 +11,32 @@
   },
   "scripts": {
     "test": "mocha"
-  }
+  },
+  "name": "align-to-sides",
+  "description": "This library can be used to set text alignment for a set of elements based on their position relative to their parent element(s).",
+  "version": "0.1.0",
+  "main": "AlignToSides.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davejtoews/align-to-sides.git"
+  },
+  "keywords": [
+    "layout",
+    "queue",
+    "window",
+    "resize",
+    "text",
+    "align",
+    "sides",
+    "parent"
+  ],
+  "author": "Dave Toews (http://davejtoews.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davejtoews/align-to-sides/issues"
+  },
+  "homepage": "https://github.com/davejtoews/align-to-sides#readme"
 }

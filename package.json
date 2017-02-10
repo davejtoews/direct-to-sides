@@ -13,7 +13,7 @@
     "test": "mocha"
   },
   "name": "align-to-sides",
-  "description": "This library can be used to set text alignment for a set of elements based on their position relative to their parent element(s).",
+  "description": "This library can be used to dynamically set text alignment for a set of elements based on their position relative to their parent element(s).",
   "version": "0.1.0",
   "main": "AlignToSides.js",
   "directories": {

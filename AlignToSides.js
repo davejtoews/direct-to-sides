@@ -4,7 +4,7 @@ var LayoutQueue = require('layout-queue');
 
 var AlignToSides = (function () {
 
-	function align(selector, tolerance) {
+	function align(selector, tolerance, reverse = false) {
         document.querySelectorAll(selector).forEach(function(parent) {
             var parentRect = parent.getBoundingClientRect();
             var children = Array.from(parent.children);
@@ -12,15 +12,26 @@ var AlignToSides = (function () {
             children.forEach(function(child){
             	var childRect = child.getBoundingClientRect();
             	var diffLeft = childRect.left - parentRect.left;
-            	var diffRight = parentRect.right - childRect.right; 
+            	var diffRight = parentRect.right - childRect.right;
 
-				if (tolerance && diffLeft >= tolerance && diffRight >= tolerance) {
-					child.style.textAlign = "center";
-				} else if ( diffRight >= diffLeft ) {
-					child.style.textAlign = "left";
-				} else {
-					child.style.textAlign = "right";
-				}
+            	if (!reverse) {
+					if (tolerance && diffLeft >= tolerance && diffRight >= tolerance) {
+						child.style.textAlign = "center";
+					} else if ( diffRight >= diffLeft ) {
+						child.style.textAlign = "left";
+					} else {
+						child.style.textAlign = "right";
+					}            		
+            	} else {
+					if (tolerance && diffLeft >= tolerance && diffRight >= tolerance) {
+						child.style.textAlign = "center";
+					} else if ( diffRight >= diffLeft ) {
+						child.style.textAlign = "right";
+					} else {
+						child.style.textAlign = "left";
+					}                     		
+            	}
+
             });
         });    		
 	}
@@ -39,11 +50,11 @@ var AlignToSides = (function () {
 	}
 
 	return {
-		init: function (selector, tolerance) {
-			enqueue(selector, tolerance);
+		init: function (selector, tolerance, reverse) {
+			enqueue(selector, tolerance, reverse);
 		},
-		set: function (selector, tolerance) {
-			align(selector, tolerance);
+		set: function (selector, tolerance, reverse) {
+			align(selector, tolerance, reverse);
 		},
 		unset: function (selector) {
 			release(selector);

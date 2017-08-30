@@ -47,5 +47,15 @@ describe('AlignToSides', function() {
 
 		assert.equal(document.body.innerHTML, '<ul><li style="text-align: center;">one</li><li style="text-align: right;">two</li><li style="text-align: left;">three</li></ul>');		
 	});
+	it('should set alignment in reverse', function() {
+		setBoundingClientRect(parent, 0, 100);
+		setBoundingClientRect(children[0], 10, 20);
+		setBoundingClientRect(children[1], 45, 55);
+		setBoundingClientRect(children[2], 80, 90);
+
+		AlignToSides.set('ul', null, true);
+
+		assert.equal(document.body.innerHTML, '<ul><li style="text-align: right;">one</li><li style="text-align: right;">two</li><li style="text-align: left;">three</li></ul>');		
+	});
 
 });

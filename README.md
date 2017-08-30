@@ -28,6 +28,11 @@ A tolerance value in pixels can be added as a second parameter to set any child 
 
     AlignToSides.init(selector, tolerance);
 
+A third boolean parameter can be added to reverse the orientation, and align elements to the center rather than the sides. This parameter will default to `false`.
+
+    var reverse = true;
+    AlignToSides.init(selector, tolerance, reverse);
+
 ## Advanced use
 
 To manually unset the text alignment of an elements children use `unset()`:

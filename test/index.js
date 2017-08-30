@@ -58,9 +58,11 @@ describe('AlignToSides', function() {
 		assert.equal(document.body.innerHTML, '<ul><li style="text-align: right;">one</li><li style="text-align: right;">two</li><li style="text-align: left;">three</li></ul>');		
 	});
 	it('should take conditions', function() {
+		var condition = function() {
+			return false;
+		}
 		AlignToSides.unset('ul');
-
-		AlignToSides.set('ul', null, null, false);
+		AlignToSides.set('ul', null, null, condition);
 		assert.equal(document.body.innerHTML, '<ul><li style="text-align: inherit;">one</li><li style="text-align: inherit;">two</li><li style="text-align: inherit;">three</li></ul>');
 	});
 

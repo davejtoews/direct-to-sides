@@ -33,6 +33,11 @@ A third boolean parameter can be added to reverse the orientation, and align ele
     var reverse = true;
     AlignToSides.init(selector, tolerance, reverse);
 
+A condition passed as a function can be added as a fourth parameter, allowing for a conditional applicaiton of the alignment.
+
+	var condition = function () { return false }
+	AlignToSides.init(selector, tolerance, reverse, condition);
+
 ## Advanced use
 
 To manually unset the text alignment of an elements children use `unset()`:

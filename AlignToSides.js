@@ -4,12 +4,13 @@ var LayoutQueue = require('layout-queue');
 
 var AlignToSides = (function () {
 
-	function align(selector, tolerance, reverse = false, condition = true ) {
+	function align(selector, tolerance, reverse = false, condition = function(){return true} ) {
         document.querySelectorAll(selector).forEach(function(parent) {
             var parentRect = parent.getBoundingClientRect();
             var children = Array.from(parent.children);
 
-            if ( condition ) {
+            console.log(condition());
+            if ( condition() ) {
 	            children.forEach(function(child){
 	            	setAlingmentStyle(child, parentRect, tolerance, reverse);
 	            });            	

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "layout-queue": "^0.1.1"
+    "layout-queue": "1.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",

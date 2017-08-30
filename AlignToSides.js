@@ -8,8 +8,7 @@ var AlignToSides = (function () {
         document.querySelectorAll(selector).forEach(function(parent) {
             var parentRect = parent.getBoundingClientRect();
             var children = Array.from(parent.children);
-
-            console.log(condition());
+            
             if ( condition() ) {
 	            children.forEach(function(child){
 	            	setAlingmentStyle(child, parentRect, tolerance, reverse);

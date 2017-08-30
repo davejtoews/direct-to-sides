@@ -22,7 +22,7 @@ var AlignToSides = (function () {
 					} else {
 						child.style.textAlign = "right";
 					}            		
-            	} else {
+            	} else { 
 					if (tolerance && diffLeft >= tolerance && diffRight >= tolerance) {
 						child.style.textAlign = "center";
 					} else if ( diffRight >= diffLeft ) {
@@ -45,8 +45,8 @@ var AlignToSides = (function () {
         });    		
 	}
 
-	function enqueue(selector, tolerance) {
-		LayoutQueue.add(align, [selector, tolerance]);
+	function enqueue(selector, tolerance, reverse) {
+		LayoutQueue.add(align, [selector, tolerance, reverse]);
 	}
 
 	return {

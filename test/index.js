@@ -25,7 +25,7 @@ describe('DirectToSides', function() {
 
 		DirectToSides.set('ul');
 
-		assert.equal(document.body.innerHTML, '<ul><li style="direction: rtl;">one</li><li style="direction: rtl;">two</li><li style="direction: ltr;">three</li></ul>');		
+		assert.equal(document.body.innerHTML, '<ul><li style="direction: ltr;">one</li><li style="direction: ltr;">two</li><li style="direction: rtl;">three</li></ul>');		
 	});
 	it('should unset direction', function() {
 		DirectToSides.unset('ul');
@@ -34,7 +34,7 @@ describe('DirectToSides', function() {
 	it('should set direction with respect to tolerance', function() {
 
 		DirectToSides.set('ul', 20);
-		assert.equal(document.body.innerHTML, '<ul><li style="direction: rtl;">one</li><li style="direction: inherit;">two</li><li style="direction: ltr;">three</li></ul>');		
+		assert.equal(document.body.innerHTML, '<ul><li style="direction: ltr;">one</li><li style="direction: inherit;">two</li><li style="direction: rtl;">three</li></ul>');		
 	});
 	it('should set direction on resize', function() {
 		setBoundingClientRect(parent, 100, 200);
@@ -45,7 +45,7 @@ describe('DirectToSides', function() {
 		DirectToSides.init('ul', 30);
 		window.dispatchEvent(new Event('resize'));
 
-		assert.equal(document.body.innerHTML, '<ul><li style="direction: inherit;">one</li><li style="direction: ltr;">two</li><li style="direction: rtl;">three</li></ul>');		
+		assert.equal(document.body.innerHTML, '<ul><li style="direction: inherit;">one</li><li style="direction: rtl;">two</li><li style="direction: ltr;">three</li></ul>');		
 	});
 	it('should set direction in reverse', function() {
 		setBoundingClientRect(parent, 0, 100);
@@ -55,7 +55,7 @@ describe('DirectToSides', function() {
 
 		DirectToSides.set('ul', null, true);
 
-		assert.equal(document.body.innerHTML, '<ul><li style="direction: ltr;">one</li><li style="direction: ltr;">two</li><li style="direction: rtl;">three</li></ul>');		
+		assert.equal(document.body.innerHTML, '<ul><li style="direction: rtl;">one</li><li style="direction: rtl;">two</li><li style="direction: ltr;">three</li></ul>');		
 	});
 	it('should take conditions', function() {
 		var condition = function() {

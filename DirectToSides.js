@@ -29,17 +29,17 @@ var DirectToSides = (function () {
 			if (tolerance && diffLeft >= tolerance && diffRight >= tolerance) {
 				child.style.direction = "inherit";
 			} else if ( diffRight >= diffLeft ) {
-				child.style.direction = "rtl";
-			} else {
 				child.style.direction = "ltr";
+			} else {
+				child.style.direction = "rtl";
 			}            		
     	} else { 
 			if (tolerance && diffLeft >= tolerance && diffRight >= tolerance) {
 				child.style.direction = "inherit";
 			} else if ( diffRight >= diffLeft ) {
-				child.style.direction = "ltr";
-			} else {
 				child.style.direction = "rtl";
+			} else {
+				child.style.direction = "ltr";
 			}                     		
     	}
 	}
